@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Reuseables */
+
+.frame-lg {
+    width: 70vw;
+    margin: auto;
+    /* border: 5px solid black; */
+}
+
+.frame-poster {
+    width: 24vw;
+}
+
+.frame-plot {
+    width: 50vw;
+}
+
+.highlight {
+    color: #40a2e3;
+}
+
+.no-highlight {
+    color: gray;
+    opacity: 0.5;
+    font-weight: 500;
+}
+
+/* Main */
+
+/* Title Section */
+.title {
+    display: flex;
+    align-items: center;
+    /* border: 5px solid red; */
+    justify-content: space-between;
+}
+
+.genere {
+    color: #1da1f2;
+    margin-top: -25px;
+    /* border: 5px solid gray; */
+}
+
+/* Content Section */
+.main-container {
+    gap: 2em;
+    display: flex;
+}
+
+.movie-details,
+.main-container,
+.plot-section {
+    align-self: flex-start;
+}
+
+.movie-poster {
+    width: 24vw;
+    height: 60vh;
+    /* background-color: skyblue; */
+}
+
+.movie-poster img {
+    width: 24vw;
+    height: 58vh;
+}
+
+.plot-section p {
+    opacity: 0.7;
+    margin-top: -8px;
+}
+
+.other-details {
+    padding-top: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    grid-gap: 4em; /* Adjust the gap between grid items */
+}
+
+.details-grid ul {
+    padding-left: 0;
+}
+
+.details-grid li {
+    color: #1da1f2;
+    /* font-size: 0.9em; */
+    list-style: none;
+    padding-bottom: 0.5em;
+}
+
+.details-grid a {
+    color: #40a2e3;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+/* Searchbar */
+.outline-searchbar {
+    width: 70vw;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid #40a2e3;
+}
+.outline-searchbar span {
+    color: #40a2e3;
+    font-size: 1.2em;
+}
+
+.fa-xmark {
+    color: #e72929;
+}
+
+.outline-searchbar div {
+    opacity: 0.5;
+    transition: all 10ms ease-in-out;
+}
+
+.outline-searchbar div:hover {
+    transition: all 10ms ease-in-out;
+    opacity: 1;
+}
+
+.outline-searchbar button {
+    border: none;
+    outline: none;
+    padding-right: 0.8em;
+    background-color: white;
+}
+.search-ip {
+    width: 87%;
+    border: none;
+    outline: none;
+    font-size: medium;
+}
