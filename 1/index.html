@@ -181,6 +181,15 @@
                     </div>
                 </div>
             </div>
+
+            <div class="frame-lg">
+                <h1><u>Current Listing Genere Statistics</u></h1>
+                <ul>
+                    <li v-for="stats of Object.entries(statistics)">
+                        {{ stats[0] + ": " + stats[1] }}
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -579,13 +588,30 @@
                         searchInput: "",
                         watchLater: {},
                         searchResult: [],
+                        statistics: {},
                     };
                 },
-                computed: {},
+                computed: {
+                    computeStatistics() {
+                        var stats = {};
+                        for (movie of this.searchResult) {
+                            for (genre of movie.Genre.split(",")) {
+                                if (stats.hasOwnProperty(genre)) {
+                                    stats[genre] += 1;
+                                } else {
+                                    stats[genre] = 1;
+                                }
+                            }
+                        }
+
+                        this.statistics = stats;
+                    },
+                },
                 watch: {},
                 methods: {
                     clearSearch() {
                         this.searchInput = "";
+                        this.searchResult = [];
                     },
                     searchTerm() {
                         var resultArr = [];
@@ -600,6 +626,7 @@
                             }
                         }
                         this.searchResult = resultArr;
+                        this.computeStatistics;
                     },
                 },
             }).mount("#app");
